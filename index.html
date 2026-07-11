@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huang Yutong | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="home-page">
+    <!-- Background Gradient -->
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">
+                <span class="nav-logo">HYT</span>
+                <span class="nav-text">PORTFOLIO</span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="work.html" class="nav-link">Projects</a>
+                <a href="journey.html" class="nav-link">Internships</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="skills.html" class="mobile-link">Skills</a>
+        <a href="work.html" class="mobile-link">Projects</a>
+        <a href="journey.html" class="mobile-link">Internships</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-greeting">
+                <span class="greeting-line">Hello, I'm</span>
+                <h1 class="hero-name">Huang <span class="highlight-name">Yutong</span></h1>
+            </div>
+
+            <div class="hero-intro">
+                <p>Welcome to my digital space! I'm a curious, data-driven innovator currently majoring in <span class="highlight">Economic Statistics</span> at <span class="highlight">Zhejiang Gongshang University</span>.</p>
+                <p>I love diving deep into massive datasets, turning complex statistical models and machine learning into real-world business insights.</p>
+                <p>From developing predictive algorithms to hands-on product design, I always approach problem-solving with strict data logic.</p>
+                <p>Outside of work and study, you'll find me behind a camera or at the gym—always looking for life's little joys and pushing myself to grow.</p>
+                <p class="intro-closing">I'm so glad you're here to share in my journey!</p>
+            </div>
+
+            <div class="hero-roles">
+                <div class="role-pill">Data Analyst</div>
+                <div class="role-pill">Product Manager</div>
+                <div class="role-pill">Visual Creator</div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="photo-collage" id="photoCollage">
+                <div class="ripple-container" id="rippleContainer"></div>
+                <div class="photo-wheel" id="photoWheel">
+                    <div class="wheel-ring" id="wheelRing">
+                        <button class="photo-btn photo-btn-1" data-photo="我的素材/me1.jpg" data-index="0">
+                            <img src="我的素材/me1.jpg" alt="Photo 1">
+                            <span class="photo-overlay"></span>
+                        </button>
+                        <button class="photo-btn photo-btn-2" data-photo="我的素材/me2.jpg" data-index="1">
+                            <img src="我的素材/me2.jpg" alt="Photo 2">
+                            <span class="photo-overlay"></span>
+                        </button>
+                        <button class="photo-btn photo-btn-3" data-photo="我的素材/me3.jpg" data-index="2">
+                            <img src="我的素材/me3.jpg" alt="Photo 3">
+                            <span class="photo-overlay"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="main-photo-container">
+                    <div class="main-photo-wrapper">
+                        <div class="main-photo-inner">
+                            <img src="我的素材/me1.jpg" alt="Main Photo" class="main-photo" id="mainPhoto">
+                            <div class="main-photo-gradient"></div>
+                            <div class="main-photo-inner-border"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="quick-links">
+        <div class="quick-links-header">
+            <span class="quick-links-title">EXPLORE THE CURRENT</span>
+        </div>
+        <div class="quick-links-container">
+            <a href="about.html" class="quick-link" data-link="about">
+                <span class="link-number">01</span>
+                <div class="link-info">
+                    <h3>About Me</h3>
+                    <p>Discover my story</p>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="skills.html" class="quick-link" data-link="skills">
+                <span class="link-number">02</span>
+                <div class="link-info">
+                    <h3>Skills</h3>
+                    <p>Data & Product expertise</p>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="work.html" class="quick-link" data-link="work">
+                <span class="link-number">03</span>
+                <div class="link-info">
+                    <h3>Projects</h3>
+                    <p>Selected projects</p>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="journey.html" class="quick-link" data-link="journey">
+                <span class="link-number">04</span>
+                <div class="link-info">
+                    <h3>Internships</h3>
+                    <p>Career timeline</p>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+
+            <a href="contact.html" class="quick-link" data-link="contact">
+                <span class="link-number">05</span>
+                <div class="link-info">
+                    <h3>Contact</h3>
+                    <p>Let's connect</p>
+                </div>
+                <span class="link-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Huang Yutong · Crafted with passion</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

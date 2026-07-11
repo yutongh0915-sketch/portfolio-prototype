@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Huang Yutong</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">HYT</a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="skills.html" class="nav-link">Skills</a>
+                <a href="work.html" class="nav-link active">Projects</a>
+                <a href="journey.html" class="nav-link">Internships</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="about.html" class="mobile-link">About</a>
+        <a href="skills.html" class="mobile-link">Skills</a>
+        <a href="work.html" class="mobile-link">Projects</a>
+        <a href="journey.html" class="mobile-link">Internships</a>
+        <a href="contact.html" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <span class="page-number">03</span>
+        <h1 class="page-title">Selected Projects</h1>
+        <p class="page-subtitle">Data-driven projects and research</p>
+    </section>
+
+    <!-- Projects Accordion Section -->
+    <section class="projects-accordion-section">
+        <div class="project-accordion-item active" data-project="1">
+            <div class="project-accordion-header">
+                <div class="project-header-left">
+                    <span class="project-number-sm">01</span>
+                    <h3>Dancing with the Stars</h3>
+                </div>
+                <div class="project-header-right">
+                    <span class="project-category">2026 MCM</span>
+                    <span class="accordion-icon">−</span>
+                </div>
+            </div>
+            <div class="project-accordion-content">
+                <div class="project-image">
+                    <img src="我的素材/Projects/1.png" alt="Dancing with the Stars">
+                </div>
+                <div class="project-details">
+                    <p>Reconstructed vote data from "Dancing with the Stars" using Python. Applied DSRF-SHAP analysis to reveal significant divergence between judge scoring and fan voting patterns, uncovering hidden biases in competition evaluation.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>SHAP Analysis</span>
+                        <span>Data Reconstruction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-accordion-item" data-project="2">
+            <div class="project-accordion-header">
+                <div class="project-header-left">
+                    <span class="project-number-sm">02</span>
+                    <h3>Hainan Tourism Research</h3>
+                </div>
+                <div class="project-header-right">
+                    <span class="project-category">Business Analytics</span>
+                    <span class="accordion-icon">+</span>
+                </div>
+            </div>
+            <div class="project-accordion-content">
+                <div class="project-image">
+                    <img src="我的素材/Projects/2.jpeg" alt="Hainan Tourism Research">
+                </div>
+                <div class="project-details">
+                    <p>Conducted NLP processing on travel guide data to identify high-engagement content patterns. Used machine learning methods to extract key predictive factors that differentiate successful tourism guides from average ones.</p>
+                    <div class="project-tags">
+                        <span>NLP</span>
+                        <span>Machine Learning</span>
+                        <span>Feature Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-accordion-item" data-project="3">
+            <div class="project-accordion-header">
+                <div class="project-header-left">
+                    <span class="project-number-sm">03</span>
+                    <h3>Multimodal Typhoon Warning</h3>
+                </div>
+                <div class="project-header-right">
+                    <span class="project-category">Social Governance</span>
+                    <span class="accordion-icon">+</span>
+                </div>
+            </div>
+            <div class="project-accordion-content">
+                <div class="project-image">
+                    <img src="我的素材/Projects/3.png" alt="Multimodal Typhoon Warning">
+                </div>
+                <div class="project-details">
+                    <p>Integrated multisource data streams to enhance typhoon warning systems. Applied Structural Equation Modeling (SEM) for empirical analysis of warning effectiveness and public response patterns.</p>
+                    <div class="project-tags">
+                        <span>SEM</span>
+                        <span>Multisource Data</span>
+                        <span>Public Policy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Huang Yutong · Crafted with passion</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

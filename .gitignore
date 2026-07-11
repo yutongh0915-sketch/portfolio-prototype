@@ -1,0 +1,9 @@
+# 素材目录
+素材/
+我的素材/
+
+# 常见忽略
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
