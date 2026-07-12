@@ -24,7 +24,7 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="skills.html" class="nav-link">Skills</a>
                 <a href="work.html" class="nav-link">Projects</a>
-                <a href="journey.html" class="nav-link">Internships</a>
+                <a href="internships.html" class="nav-link">Internships</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <button class="nav-toggle">
@@ -39,15 +39,16 @@
         <a href="about.html" class="mobile-link">About</a>
         <a href="skills.html" class="mobile-link">Skills</a>
         <a href="work.html" class="mobile-link">Projects</a>
-        <a href="journey.html" class="mobile-link">Internships</a>
+        <a href="internships.html" class="mobile-link">Internships</a>
         <a href="contact.html" class="mobile-link">Contact</a>
     </div>
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Left Content -->
         <div class="hero-content">
             <div class="hero-greeting">
-                <span class="greeting-line">Hello, I'm</span>
+                <span class="greeting-line">HELLO, I'M</span>
                 <h1 class="hero-name">Huang <span class="highlight-name">Yutong</span></h1>
             </div>
 
@@ -66,31 +67,59 @@
             </div>
         </div>
 
+        <!-- Right Visual - Photo Wheel Component -->
         <div class="hero-visual">
-            <div class="photo-collage" id="photoCollage">
+            <div class="photo-wheel-component" id="photoWheelComponent">
+                <!-- Ripple Container -->
                 <div class="ripple-container" id="rippleContainer"></div>
-                <div class="photo-wheel" id="photoWheel">
-                    <div class="wheel-ring" id="wheelRing">
-                        <button class="photo-btn photo-btn-1" data-photo="我的素材/me1.jpg" data-index="0">
+
+                <!-- Background Grid Pattern -->
+                <div class="grid-pattern"></div>
+
+                <!-- Orbit Track (Dashed Circle) -->
+                <div class="orbit-track"></div>
+
+                <!-- Satellite Images Container -->
+                <div class="satellites-container" id="satellitesContainer">
+                    <!-- Top Satellite (12 o'clock) -->
+                    <div class="satellite satellite-top" data-index="0">
+                        <!-- Decorative Ring -->
+                        <div class="decorative-ring"></div>
+                        <!-- Photo Button -->
+                        <button class="satellite-btn" data-photo="我的素材/me1.jpg">
                             <img src="我的素材/me1.jpg" alt="Photo 1">
-                            <span class="photo-overlay"></span>
+                            <span class="satellite-overlay"></span>
                         </button>
-                        <button class="photo-btn photo-btn-2" data-photo="我的素材/me2.jpg" data-index="1">
+                    </div>
+
+                    <!-- Bottom Right Satellite (4 o'clock) -->
+                    <div class="satellite satellite-right" data-index="1">
+                        <!-- Square Base -->
+                        <div class="square-base"></div>
+                        <!-- Photo Button -->
+                        <button class="satellite-btn" data-photo="我的素材/me2.jpg">
                             <img src="我的素材/me2.jpg" alt="Photo 2">
-                            <span class="photo-overlay"></span>
+                            <span class="satellite-overlay"></span>
                         </button>
-                        <button class="photo-btn photo-btn-3" data-photo="我的素材/me3.jpg" data-index="2">
+                    </div>
+
+                    <!-- Bottom Left Satellite (8 o'clock) -->
+                    <div class="satellite satellite-left" data-index="2">
+                        <!-- Square Base -->
+                        <div class="square-base"></div>
+                        <!-- Photo Button -->
+                        <button class="satellite-btn" data-photo="我的素材/me3.jpg">
                             <img src="我的素材/me3.jpg" alt="Photo 3">
-                            <span class="photo-overlay"></span>
+                            <span class="satellite-overlay"></span>
                         </button>
                     </div>
                 </div>
-                <div class="main-photo-container">
-                    <div class="main-photo-wrapper">
-                        <div class="main-photo-inner">
+
+                <!-- Center Main Image -->
+                <div class="center-main-image">
+                    <div class="main-image-outer-ring">
+                        <div class="main-image-inner-ring">
                             <img src="我的素材/me1.jpg" alt="Main Photo" class="main-photo" id="mainPhoto">
-                            <div class="main-photo-gradient"></div>
-                            <div class="main-photo-inner-border"></div>
                         </div>
                     </div>
                 </div>
@@ -98,7 +127,7 @@
         </div>
     </section>
 
-    <!-- Quick Links -->
+    <!-- Quick Links Section -->
     <section class="quick-links">
         <div class="quick-links-header">
             <span class="quick-links-title">EXPLORE THE CURRENT</span>
@@ -131,7 +160,7 @@
                 <span class="link-arrow">→</span>
             </a>
 
-            <a href="journey.html" class="quick-link" data-link="journey">
+            <a href="internships.html" class="quick-link" data-link="journey">
                 <span class="link-number">04</span>
                 <div class="link-info">
                     <h3>Internships</h3>

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="skills-page">
     <div class="bg-gradient"></div>
 
     <!-- Navigation -->
@@ -20,7 +20,7 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="skills.html" class="nav-link active">Skills</a>
                 <a href="work.html" class="nav-link">Projects</a>
-                <a href="journey.html" class="nav-link">Internships</a>
+                <a href="internships.html" class="nav-link">Internships</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <button class="nav-toggle">
@@ -35,139 +35,389 @@
         <a href="about.html" class="mobile-link">About</a>
         <a href="skills.html" class="mobile-link">Skills</a>
         <a href="work.html" class="mobile-link">Projects</a>
-        <a href="journey.html" class="mobile-link">Internships</a>
+        <a href="internships.html" class="mobile-link">Internships</a>
         <a href="contact.html" class="mobile-link">Contact</a>
     </div>
 
     <!-- Page Header -->
-    <section class="page-header">
-        <span class="page-number">02</span>
-        <h1 class="page-title">Skills Universe</h1>
-        <p class="page-subtitle">Where analytical thinking meets creative expression</p>
+    <section class="skills-page-header">
+        <span class="header-label">02</span>
+        <h1 class="header-title">
+            <span class="title-main">Skills</span>
+            <span class="title-accent">Universe</span>
+        </h1>
+        <p class="header-subtitle">WHERE ANALYTICAL THINKING MEETS CREATIVE EXPRESSION</p>
     </section>
 
-    <!-- Skills Nebula -->
-    <section class="skills-nebula">
-        <div class="nebula-center">
-            <div class="core-skill">
-                <span class="core-icon">🌟</span>
-                <span class="core-text">My Core</span>
+    <!-- Vintage Archive Cards Section -->
+    <section class="archive-cards-section">
+        <!-- Card 01: Data Analytics (Mustard Yellow) -->
+        <div class="archive-card archive-mustard">
+            <!-- Fixed Top -->
+            <div class="card-top">
+                <span class="card-number">01</span>
+                <h3 class="card-title">Data Analytics</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
             </div>
-        </div>
 
-        <!-- Data Analytics Cluster -->
-        <div class="skill-cluster cluster-data" data-position="left">
-            <div class="cluster-title">Data Analytics</div>
-            <div class="cluster-items">
-                <div class="skill-node node-large">Python</div>
-                <div class="skill-node node-medium">R</div>
-                <div class="skill-node node-medium">MATLAB</div>
-                <div class="skill-node node-small">Excel</div>
-                <div class="skill-node node-medium">LSTM Models</div>
-                <div class="skill-node node-medium">XGBoost</div>
-                <div class="skill-node node-small">NLP</div>
-                <div class="skill-node node-medium">Linear Programming</div>
-                <div class="skill-node node-small">PL-PECON</div>
-            </div>
-        </div>
-
-        <!-- Product & Design Cluster -->
-        <div class="skill-cluster cluster-product" data-position="right">
-            <div class="cluster-title">Product & Design</div>
-            <div class="cluster-items">
-                <div class="skill-node node-large">PRD Writing</div>
-                <div class="skill-node node-medium">Figma</div>
-                <div class="skill-node node-small">UX Research</div>
-                <div class="skill-node node-small">Interaction Design</div>
-                <div class="skill-node node-small">User Flows</div>
-            </div>
-        </div>
-
-        <!-- Special Skills -->
-        <div class="special-skills">
-            <div class="special-skill special-photo">
-                <div class="special-icon">📷</div>
-                <div class="special-content">
-                    <h3>Photography</h3>
-                    <p>Top 10 Visual Journalist · Visual Storytelling</p>
-                    <div class="special-tags">
-                        <span>Composition</span>
-                        <span>Lighting</span>
-                        <span>Editing</span>
+            <!-- Marquee Area -->
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 25s;">
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">R Language</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">MATLAB</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Excel</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">LSTM</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">XGBoost</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">NLP</span>
+                    </div>
+                    <!-- Duplicate -->
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">R Language</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">MATLAB</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Excel</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">LSTM</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">XGBoost</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">NLP</span>
                     </div>
                 </div>
             </div>
 
-            <div class="special-skill special-english">
-                <div class="special-icon">🌍</div>
-                <div class="special-content">
-                    <h3>English Proficiency</h3>
-                    <p>Academic reading · Technical writing · Cross-cultural communication</p>
-                    <div class="special-tags">
-                        <span>IELTS Ready</span>
-                        <span>Research Papers</span>
+            <!-- Fixed Bottom -->
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <!-- Card 02: Product & Design (Terracotta) -->
+        <div class="archive-card archive-terracotta">
+            <div class="card-top">
+                <span class="card-number">02</span>
+                <h3 class="card-title">Product & Design</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 22s;">
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">PRD Writing</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">UX Research</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Data Storytelling</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">User Flows</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Wireframing</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Interaction Design</span>
+                    </div>
+                    <!-- Duplicate -->
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">PRD Writing</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">UX Research</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Data Storytelling</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">User Flows</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Wireframing</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Interaction Design</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <!-- Card 03: Research Methods (Bright Orange) -->
+        <div class="archive-card archive-orange">
+            <div class="card-top">
+                <span class="card-number">03</span>
+                <h3 class="card-title">Research Methods</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 24s;">
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Monte Carlo Simulation</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Structural Equation Modeling</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Text Mining & NLP</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Quantile Regression</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Markov Chains</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Field Research & Survey</span>
+                    </div>
+                    <!-- Duplicate -->
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Monte Carlo Simulation</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Structural Equation Modeling</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Text Mining & NLP</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Quantile Regression</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Markov Chains</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Field Research & Survey</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <!-- Card 04: Tools (Khaki/Sand) -->
+        <div class="archive-card archive-khaki">
+            <div class="card-top">
+                <span class="card-number">04</span>
+                <h3 class="card-title">Tools</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 20s;">
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">R</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Figma</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">PS</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">LR</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">EXCEL</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Power BI</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Power Query</span>
+                    </div>
+                    <!-- Duplicate -->
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Python</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">R</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">VS Code</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">GitHub</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Figma</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">PS</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">LR</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">EXCEL</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Power BI</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-bullet"></span>
+                        <span class="skill-text">Power Query</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
             </div>
         </div>
     </section>
 
-    <!-- Competencies -->
-    <section class="competencies">
-        <h2>Key Competencies</h2>
-        <div class="competency-grid">
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>System Operation Manuals</span>
+    <!-- Minimalist Highlight Cards -->
+    <section class="highlight-cards">
+        <!-- Card 01: English Proficiency -->
+        <div class="highlight-card">
+            <h3 class="highlight-title">English Proficiency</h3>
+            <div class="score-grid">
+                <div class="score-item">
+                    <span class="score-value">7.0</span>
+                    <span class="score-label">IELTS Academic</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-value">321</span>
+                    <span class="score-label">GRE</span>
+                </div>
             </div>
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>Role & Permission Design</span>
-            </div>
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>Memory Analysis</span>
-            </div>
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>Economic Statistical Analysis</span>
-            </div>
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>Product Requirements</span>
-            </div>
-            <div class="competency-item">
-                <span class="check-icon">✓</span>
-                <span>Data Visualization</span>
+        </div>
+
+        <!-- Card 02: Photography & Media -->
+        <div class="highlight-card">
+            <h3 class="highlight-title">Photography & Media</h3>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">Passionate about photography</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">2x Top 10 Visual Journalist Award</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">Director of Converged Media Center</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Photography Gallery -->
     <section class="photography-section">
-        <h2>Photography Portfolio</h2>
+        <h2 class="section-title">Photography Portfolio</h2>
         <p class="section-desc">Capturing moments, telling stories through my lens</p>
-        <div class="photo-wall">
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105139_980_45.jpg" alt="Photography 1">
-            </div>
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105155_981_45.jpg" alt="Photography 2">
-            </div>
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105238_982_45.jpg" alt="Photography 3">
-            </div>
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105256_983_45.jpg" alt="Photography 4">
-            </div>
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105417_984_45.jpg" alt="Photography 5">
-            </div>
-            <div class="photo-card" data-lightbox>
-                <img src="我的素材/摄影/微信图片_20260711105800_985_45.jpg" alt="Photography 6">
-            </div>
+        <div class="photo-grid" id="photoGrid">
+            <!-- Photos will be dynamically loaded -->
         </div>
     </section>
+
+    <!-- Photo Lightbox Overlay -->
+    <div class="photo-lightbox" id="photoLightbox">
+        <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close">×</button>
+        <img class="lightbox-photo" id="lightboxPhoto" src="" alt="">
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

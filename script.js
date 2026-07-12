@@ -38,20 +38,39 @@ function initQuickLinks() {
 
 // ===== Interactive Cards (About Page) =====
 function initInteractiveCards() {
-    const cards = document.querySelectorAll('.interactive-card');
-
-    cards.forEach(card => {
+    // Support for old interactive-card style
+    const oldCards = document.querySelectorAll('.interactive-card');
+    oldCards.forEach(card => {
         card.addEventListener('click', () => {
-            // Close other cards
-            cards.forEach(c => {
+            oldCards.forEach(c => {
                 if (c !== card) {
                     c.classList.remove('active');
                 }
             });
-
-            // Toggle current card
             card.classList.toggle('active');
         });
+    });
+
+    // New accordion style
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
     });
 }
 
@@ -172,53 +191,68 @@ function initCubeGrid() {
     setInterval(randomSparkle, 800);
 }
 
-// ===== Lightbox for Photography =====
-function initLightbox() {
-    const photoCards = document.querySelectorAll('[data-lightbox]');
+// ===== Photo Lightbox =====
+function initPhotoLightbox() {
+    const photoGrid = document.getElementById('photoGrid');
+    const photoLightbox = document.getElementById('photoLightbox');
+    const lightboxPhoto = document.getElementById('lightboxPhoto');
+    const lightboxClose = document.getElementById('lightboxClose');
 
-    // Create lightbox element
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = `
-        <button class="lightbox-close"></button>
-        <div class="lightbox-wrapper">
-            <img class="lightbox-content" src="" alt="">
-        </div>
-    `;
-    document.body.appendChild(lightbox);
+    if (!photoGrid || !photoLightbox) return;
 
-    const lightboxImg = lightbox.querySelector('.lightbox-content');
-    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    // Photo array - easy to replace with new images
+    const photos = [
+        { src: '我的素材/摄影/微信图片_20260711105139_980_45.jpg', alt: 'Photography 1' },
+        { src: '我的素材/摄影/微信图片_20260711105155_981_45.jpg', alt: 'Photography 2' },
+        { src: '我的素材/摄影/微信图片_20260711105238_982_45.jpg', alt: 'Photography 3' },
+        { src: '我的素材/摄影/微信图片_20260711105256_983_45.jpg', alt: 'Photography 4' },
+        { src: '我的素材/摄影/微信图片_20260711105417_984_45.jpg', alt: 'Photography 5' },
+        { src: '我的素材/摄影/微信图片_20260711105800_985_45.jpg', alt: 'Photography 6' }
+    ];
 
-    photoCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const img = card.querySelector('img');
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('active');
+    // Dynamically create photo cards
+    photos.forEach(photo => {
+        const photoCard = document.createElement('div');
+        photoCard.className = 'photo-card';
+
+        const img = document.createElement('img');
+        img.src = photo.src;
+        img.alt = photo.alt;
+
+        photoCard.appendChild(img);
+        photoGrid.appendChild(photoCard);
+
+        // Add click event for lightbox
+        photoCard.addEventListener('click', () => {
+            lightboxPhoto.src = photo.src;
+            lightboxPhoto.alt = photo.alt;
+            photoLightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
 
     // Close lightbox
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
+    lightboxClose.addEventListener('click', closePhotoLightbox);
+
+    // Click overlay to close
+    photoLightbox.addEventListener('click', (e) => {
+        if (e.target === photoLightbox) {
+            closePhotoLightbox();
         }
     });
 
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            closeLightbox();
+        if (e.key === 'Escape' && photoLightbox.classList.contains('active')) {
+            closePhotoLightbox();
         }
     });
 
-    function closeLightbox() {
-        lightbox.classList.remove('active');
+    function closePhotoLightbox() {
+        photoLightbox.classList.remove('active');
         document.body.style.overflow = '';
         setTimeout(() => {
-            lightboxImg.src = '';
+            lightboxPhoto.src = '';
         }, 300);
     }
 }
@@ -302,19 +336,19 @@ function initTypingEffect() {
     });
 }
 
-// ===== Projects Accordion =====
+// ===== Projects Accordion with Horizontal Scroll Snap =====
 function initProjectsAccordion() {
-    const accordionItems = document.querySelectorAll('.project-accordion-item');
+    const projectItems = document.querySelectorAll('.project-item');
 
-    accordionItems.forEach(item => {
-        const header = item.querySelector('.project-accordion-header');
+    projectItems.forEach(item => {
+        const header = item.querySelector('.project-header');
         const icon = item.querySelector('.accordion-icon');
 
         header.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
 
             // Close all items
-            accordionItems.forEach(otherItem => {
+            projectItems.forEach(otherItem => {
                 otherItem.classList.remove('active');
                 const otherIcon = otherItem.querySelector('.accordion-icon');
                 if (otherIcon) otherIcon.textContent = '+';
@@ -324,92 +358,148 @@ function initProjectsAccordion() {
             if (!isActive) {
                 item.classList.add('active');
                 if (icon) icon.textContent = '−';
+
+                // Initialize scroll for this project
+                initProjectScroll(item);
             }
         });
     });
 }
 
-// ===== Photo Wheel Interaction =====
-function initPhotoWheel() {
-    const photoButtons = document.querySelectorAll('.photo-btn');
+// Initialize horizontal scroll navigation for a project
+function initProjectScroll(projectItem) {
+    const scrollContainer = projectItem.querySelector('.project-scroll-container');
+    const dots = projectItem.querySelectorAll('.scroll-dot');
+    const prevBtn = projectItem.querySelector('.scroll-nav-prev');
+    const nextBtn = projectItem.querySelector('.scroll-nav-next');
+    const slides = projectItem.querySelectorAll('.project-slide');
+
+    if (!scrollContainer || !dots.length) return;
+
+    // Update dots on scroll
+    scrollContainer.addEventListener('scroll', () => {
+        const scrollLeft = scrollContainer.scrollLeft;
+        const slideWidth = scrollContainer.offsetWidth;
+        const currentIndex = Math.round(scrollLeft / slideWidth);
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+
+        // Update arrow buttons
+        if (prevBtn && nextBtn) {
+            prevBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === slides.length - 1;
+        }
+    });
+
+    // Dot click navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            const slideWidth = scrollContainer.offsetWidth;
+            scrollContainer.scrollTo({
+                left: index * slideWidth,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Arrow navigation
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            const scrollLeft = scrollContainer.scrollLeft;
+            const slideWidth = scrollContainer.offsetWidth;
+            const currentIndex = Math.round(scrollLeft / slideWidth);
+
+            if (currentIndex > 0) {
+                scrollContainer.scrollTo({
+                    left: (currentIndex - 1) * slideWidth,
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const scrollLeft = scrollContainer.scrollLeft;
+            const slideWidth = scrollContainer.offsetWidth;
+            const currentIndex = Math.round(scrollLeft / slideWidth);
+
+            if (currentIndex < slides.length - 1) {
+                scrollContainer.scrollTo({
+                    left: (currentIndex + 1) * slideWidth,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+}
+
+// ===== Photo Wheel Component Interaction =====
+function initPhotoCollage() {
+    const satelliteButtons = document.querySelectorAll('.satellite-btn');
     const mainPhoto = document.getElementById('mainPhoto');
-    const wheelRing = document.getElementById('wheelRing');
-    const photoCollage = document.getElementById('photoCollage');
+    const photoWheelComponent = document.getElementById('photoWheelComponent');
     const rippleContainer = document.getElementById('rippleContainer');
 
-    if (!photoButtons.length || !mainPhoto || !wheelRing) return;
+    if (!satelliteButtons.length || !mainPhoto) return;
 
-    let currentRotation = 0;
     let currentIndex = 0;
 
-    // Photo button click handler
-    photoButtons.forEach((button, index) => {
+    // Satellite button click handler
+    satelliteButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            const newIndex = parseInt(button.dataset.index);
+            const newIndex = parseInt(button.closest('.satellite').dataset.index);
             if (newIndex === currentIndex) return;
 
-            // Calculate rotation (each step is -120 degrees)
-            const rotationDiff = (newIndex - currentIndex) * -120;
-            currentRotation += rotationDiff;
             currentIndex = newIndex;
 
-            // Rotate the wheel ring
-            wheelRing.style.transform = `rotate(${currentRotation}deg)`;
-
-            // Counter-rotate each photo to keep it upright
-            photoButtons.forEach(btn => {
-                const btnIndex = parseInt(btn.dataset.index);
-                const btnRotation = -(currentRotation);
-                btn.style.transform = `rotate(${btnRotation}deg)`;
-            });
-
             // Update active state
-            photoButtons.forEach(btn => btn.classList.remove('active'));
+            satelliteButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            // Switch main photo with fade and scale effect
+            // Switch main photo with fade and scale effect (0.58s)
             const newPhotoSrc = button.dataset.photo;
 
-            // Step 1: Fade out current photo
+            // Step 1: Start fade-out
             mainPhoto.classList.add('fade-out');
 
-            // Step 2: After fade out, change photo source and set initial state
+            // Step 2: After fade-out, change photo and start fade-in
             setTimeout(() => {
                 mainPhoto.src = newPhotoSrc;
 
-                // Remove fade-out and add fade-in-start (scale 1.14, opacity 0)
+                // Set initial state (opacity 0, scale 1.05)
                 mainPhoto.classList.remove('fade-out');
                 mainPhoto.classList.add('fade-in-start');
 
-                // Force browser to reflow to ensure the start state is applied
+                // Force reflow
                 void mainPhoto.offsetWidth;
 
-                // Step 3: Transition to end state (scale 1.0, opacity 1)
+                // Step 3: Transition to end state (opacity 1, scale 1.0)
                 mainPhoto.classList.remove('fade-in-start');
                 mainPhoto.classList.add('fade-in');
-            }, 290); // Half of 0.58s transition
+            }, 200);
 
-            // Clean up fade-in class after animation completes
+            // Clean up fade-in class after 0.58s
             setTimeout(() => {
                 mainPhoto.classList.remove('fade-in');
-            }, 580); // Full 0.58s transition
+            }, 580);
         });
     });
 
     // Set first button as active by default
-    if (photoButtons[0]) {
-        photoButtons[0].classList.add('active');
+    if (satelliteButtons[0]) {
+        satelliteButtons[0].classList.add('active');
     }
 
-    // Mouse ripple effect
-    if (photoCollage && rippleContainer) {
-        photoCollage.addEventListener('mousemove', (e) => {
-            const rect = photoCollage.getBoundingClientRect();
+    // Mouse ripple effect on component area
+    if (photoWheelComponent && rippleContainer) {
+        photoWheelComponent.addEventListener('mousemove', (e) => {
+            const rect = photoWheelComponent.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            // Throttle ripple creation
-            if (Math.random() > 0.85) { // Create ripples occasionally
+            // Throttle ripple creation - create occasionally (about 15% of moves)
+            if (Math.random() > 0.85) {
                 createRipple(x, y, rippleContainer);
             }
         });
@@ -435,14 +525,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initQuickLinks();
     initInteractiveCards();
-    initLightbox();
+    initPhotoLightbox();
     initScrollAnimations();
     animateSkillBars();
     initNavbarScroll();
     setActiveNavLink();
     initTypingEffect();
     initProjectsAccordion();
-    initPhotoWheel();
+    initPhotoCollage();
     // Only init cube grid if element exists
     if (document.querySelector('[data-cube-grid]')) {
         initCubeGrid();

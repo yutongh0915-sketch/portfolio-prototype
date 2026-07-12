@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <div class="bg-gradient"></div>
@@ -20,7 +29,7 @@
                 <a href="about.html" class="nav-link">About</a>
                 <a href="skills.html" class="nav-link">Skills</a>
                 <a href="work.html" class="nav-link active">Projects</a>
-                <a href="journey.html" class="nav-link">Internships</a>
+                <a href="internships.html" class="nav-link">Internships</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <button class="nav-toggle">
@@ -35,7 +44,7 @@
         <a href="about.html" class="mobile-link">About</a>
         <a href="skills.html" class="mobile-link">Skills</a>
         <a href="work.html" class="mobile-link">Projects</a>
-        <a href="journey.html" class="mobile-link">Internships</a>
+        <a href="internships.html" class="mobile-link">Internships</a>
         <a href="contact.html" class="mobile-link">Contact</a>
     </div>
 
@@ -46,85 +55,330 @@
         <p class="page-subtitle">Data-driven projects and research</p>
     </section>
 
-    <!-- Projects Accordion Section -->
-    <section class="projects-accordion-section">
-        <div class="project-accordion-item active" data-project="1">
-            <div class="project-accordion-header">
+    <!-- Projects Section with Horizontal Scroll Snap -->
+    <section class="projects-section">
+
+        <!-- Project 01: Dancing with the Stars -->
+        <div class="project-item" data-project="1">
+            <div class="project-header">
                 <div class="project-header-left">
-                    <span class="project-number-sm">01</span>
-                    <h3>Dancing with the Stars</h3>
-                </div>
-                <div class="project-header-right">
-                    <span class="project-category">2026 MCM</span>
-                    <span class="accordion-icon">−</span>
-                </div>
-            </div>
-            <div class="project-accordion-content">
-                <div class="project-image">
-                    <img src="我的素材/Projects/1.png" alt="Dancing with the Stars">
-                </div>
-                <div class="project-details">
-                    <p>Reconstructed vote data from "Dancing with the Stars" using Python. Applied DSRF-SHAP analysis to reveal significant divergence between judge scoring and fan voting patterns, uncovering hidden biases in competition evaluation.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>SHAP Analysis</span>
-                        <span>Data Reconstruction</span>
+                    <span class="project-number">01</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Dancing with the Stars: The Mirrorball's Destiny</h3>
+                        <p class="project-metadata">2026 Mathematical Contest In Modeling (MCM) | 01/2026 - 02/2026</p>
                     </div>
                 </div>
+                <span class="accordion-icon">+</span>
+            </div>
+
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>Investigating the conflict between professional elitism and mass public appeal in reality TV voting systems.</p>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+
+                <!-- Horizontal Scroll Container -->
+                <div class="project-scroll-container">
+                    <!-- Slide 1: Overview -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">Project Overview Diagram</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>Dancing with the Stars struggles with the conflict between expert technical scoring and subjective fan voting, often leading to controversial eliminations.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To develop a mathematical framework that estimates hidden fan voting data, evaluates past scoring rules, and proposes a fairer voting mechanism.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Methodologies -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">SHAP Attribution Chart</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>PL-PECON (Latent Preference Decoding):</strong> Used Monte Carlo Rejection Sampling to convert fan votes into a high-dimensional constrained inverse problem, establishing a dynamic rationality upper bound $\gamma \approx 2.3$ to successfully reproduce historical elimination lists with a 96.73% consistency rate.</li>
+                                <li><strong>PRIME-AMC (Mechanism Comparison):</strong> Deployed a Probabilistic Reconstruction & Information-Markov Evaluation model using Absorbing Markov Chains to simulate counterfactual competition trajectories.</li>
+                                <li><strong>DSRF-SHAP (Factor Decoupling):</strong> Implemented a Dual-Stream Random Forest with SHAP to decode voting drivers, revealing that judges prioritize technical proficiency (partner synergy contributes >35%).</li>
+                                <li><strong>SARF (System Optimization):</strong> Proposed a Sigmoid-Gated Adaptive Rank Fusion system maintaining high rank-skill correlation (Spearman 0.9-1.0).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Impact -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">Ranking vs Percentage Method Comparison</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Impact & Skills</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Finding</h5>
+                                <p>The percentage method is biased toward fan votes (high popularity overrides professional scores when dispersion exceeds 0.6), whereas the ranking method suppresses extreme variance and maintains a high SNR of 0.96.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Submitted a memorandum recommending a hybrid strategy combining the ranking method with the "Judges' Save" mechanism, paired with a dynamic gating strategy.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Monte Carlo</span>
+                                <span class="tag">Markov Chains</span>
+                                <span class="tag">Random Forest</span>
+                                <span class="tag">Math Modeling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <div class="project-accordion-item" data-project="2">
-            <div class="project-accordion-header">
+        <!-- Project 02: Hainan Tourism Research -->
+        <div class="project-item" data-project="2">
+            <div class="project-header">
                 <div class="project-header-left">
-                    <span class="project-number-sm">02</span>
-                    <h3>Hainan Tourism Research</h3>
-                </div>
-                <div class="project-header-right">
-                    <span class="project-category">Business Analytics</span>
-                    <span class="accordion-icon">+</span>
-                </div>
-            </div>
-            <div class="project-accordion-content">
-                <div class="project-image">
-                    <img src="我的素材/Projects/2.jpeg" alt="Hainan Tourism Research">
-                </div>
-                <div class="project-details">
-                    <p>Conducted NLP processing on travel guide data to identify high-engagement content patterns. Used machine learning methods to extract key predictive factors that differentiate successful tourism guides from average ones.</p>
-                    <div class="project-tags">
-                        <span>NLP</span>
-                        <span>Machine Learning</span>
-                        <span>Feature Analysis</span>
+                    <span class="project-number">02</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Hainan Tourism Research: Predicting High-Engagement Guides</h3>
+                        <p class="project-metadata">2025 "Academic Excellence Climbing Program" | 11/2025</p>
                     </div>
                 </div>
+                <span class="accordion-icon">+</span>
+            </div>
+
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>A data-driven analysis to uncover the core features of highly "liked" user-generated travel content on Qunar.</p>
+                </div>
+
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+
+                <div class="project-scroll-container">
+                    <!-- Slide 1: Overview -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">UGC Engagement Analysis</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>While User-Generated Content (UGC) shapes modern travel decisions, content creators and platforms struggle to identify what truly drives user engagement and high "likes" for Hainan tourism guides.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To build a robust predictive model using machine learning and NLP that identifies the key factors driving high engagement, providing actionable strategies for content creators and platform algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Methodologies -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">LDA Topic Map</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>Semantic Analysis & NLP:</strong> Applied text mining and LDA (Latent Dirichlet Allocation) topic modeling to extract structured features from unstructured travel guides, identifying distinct thematic clusters like "Hainan natural landscapes."</li>
+                                <li><strong>Quantile Regression Analysis:</strong> Utilized quantile regression to analyze the non-linear impact of "per capita consumption" on engagement, revealing a negative correlation for low-to-mid engagement guides.</li>
+                                <li><strong>Decision Tree Classification:</strong> Built and optimized a Decision Tree classifier (incorporating Grid Search for hyperparameter tuning) to predict high-engagement likelihood.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Impact -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">Feature Importance Chart</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Impact & Skills</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Finding</h5>
+                                <p>Feature importance analysis revealed that mentioning "Shopping" (0.550) and "Food" (0.160) are the strongest predictors of high engagement. Guides tailored to "Family" or "Friends" trips generated significantly higher interactions.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Formulated actionable content creation formulas (e.g., combining in-depth travel, food, and photography elements for group trips) to maximize user engagement.</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">NLP (LDA)</span>
+                                <span class="tag">Quantile Regression</span>
+                                <span class="tag">Business Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
 
-        <div class="project-accordion-item" data-project="3">
-            <div class="project-accordion-header">
+        <!-- Project 03: Zhejiang Entrepreneurship Research -->
+        <div class="project-item" data-project="3">
+            <div class="project-header">
                 <div class="project-header-left">
-                    <span class="project-number-sm">03</span>
-                    <h3>Multimodal Typhoon Warning</h3>
-                </div>
-                <div class="project-header-right">
-                    <span class="project-category">Social Governance</span>
-                    <span class="accordion-icon">+</span>
-                </div>
-            </div>
-            <div class="project-accordion-content">
-                <div class="project-image">
-                    <img src="我的素材/Projects/3.png" alt="Multimodal Typhoon Warning">
-                </div>
-                <div class="project-details">
-                    <p>Integrated multisource data streams to enhance typhoon warning systems. Applied Structural Equation Modeling (SEM) for empirical analysis of warning effectiveness and public response patterns.</p>
-                    <div class="project-tags">
-                        <span>SEM</span>
-                        <span>Multisource Data</span>
-                        <span>Public Policy</span>
+                    <span class="project-number">03</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Zhejiang Entrepreneurship & Organizational Resilience</h3>
+                        <p class="project-metadata">ZJSU College Students Innovation & Entrepreneurship Training Program | 04/2025 - Present</p>
                     </div>
                 </div>
+                <span class="accordion-icon">+</span>
+            </div>
+
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>Exploring the impact of regional business culture on corporate green transformation and resilience through mixed methods.</p>
+                </div>
+
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+
+                <div class="project-scroll-container">
+                    <!-- Slide 1: Overview -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">Green Transformation Context</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>In the face of economic transitions and the "Dual Carbon" goals, traditional manufacturing enterprises face severe challenges in green transformation.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To investigate how the "Zhejiang Entrepreneurship Spirit" (Zheshang Spirit) acts as an informal institution to drive green value creation and enhance organizational resilience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Methodologies -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">APCC Dynamic Model</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>Empirical Analysis (SEM & IPA):</strong> Collected survey data from 264 startups. Utilized Structural Equation Modeling (SEM) to quantify impacts of entrepreneurial spirit on organizational resilience.</li>
+                                <li><strong>Longitudinal Case Study (APCC Model):</strong> Conducted an in-depth study of Hangzhou Iron & Steel Group's 10-year green transformation. Developed the "APCC" dynamic model to decode resource orchestration.</li>
+                                <li><strong>Field Research & Text Mining:</strong> Conducted over 5 hours of interviews with senior management, generating a 60,000-word transcript with multi-level coding analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Impact -->
+                    <div class="project-slide">
+                        <div class="slide-visual">
+                            <div class="visual-placeholder">
+                                <span class="placeholder-text">Visual Asset</span>
+                                <span class="placeholder-subtext">Resilience Pathways Diagram</span>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <h4 class="slide-title">Impact & Skills</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Finding</h5>
+                                <p>Validated that regional entrepreneurial spirit significantly enhances organizational resilience through four paths: boosting risk-taking, promoting cooperation, easing financial constraints, and strengthening responsibility.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Recognition</h5>
+                                <p>The case study report won the First Prize in the 11th Zhejiang Provincial University Student Economic Case Analysis Competition (University Level).</p>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">SEM</span>
+                                <span class="tag">Case Study</span>
+                                <span class="tag">Field Research</span>
+                                <span class="tag">ESG</span>
+                                <span class="tag">Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
+
     </section>
 
     <!-- Footer -->
