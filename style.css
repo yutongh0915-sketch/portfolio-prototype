@@ -2443,6 +2443,18 @@ body {
     color: var(--primary);
 }
 
+/* Email container with separator */
+.contact-emails {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.email-separator {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
 .contact-cta {
     text-align: center;
     padding: 3rem;
