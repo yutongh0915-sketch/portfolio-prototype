@@ -48,50 +48,52 @@
 
     <!-- About Content -->
     <section class="about-section">
-        <!-- Education - Now at top -->
-        <div class="education-card">
-            <h2>Education</h2>
-            <div class="edu-item">
-                <div class="edu-main">
-                    <h3>Zhejiang Gongshang University</h3>
-                    <p class="edu-major">Economic Statistics</p>
-                </div>
-                <div class="edu-gpa">
-                    <span class="gpa-value">4.01</span>
-                    <span class="gpa-total">/5.0</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Cards - Accordion Style -->
-        <div class="about-accordion">
-            <div class="accordion-item" data-card="data">
-                <div class="accordion-header">
-                    <h3 class="accordion-title">The Data Analyst</h3>
-                    <span class="accordion-icon">+</span>
-                </div>
-                <div class="accordion-content">
-                    <p>I transform raw data into actionable insights using Python, R, and advanced statistical methods. From LSTM models to NLP processing, I love uncovering patterns hidden in complex datasets.</p>
-                </div>
+        <!-- HoverSlider: Triggers (left) + Content (right) -->
+        <div class="hover-slider" data-hover-slider>
+            <!-- Left: Title Triggers -->
+            <div class="hover-slider-triggers">
+                <button class="hover-trigger active" data-slide="0" type="button">
+                    <span class="trigger-text">Education</span>
+                </button>
+                <button class="hover-trigger" data-slide="1" type="button">
+                    <span class="trigger-text">The Data Analyst</span>
+                </button>
+                <button class="hover-trigger" data-slide="2" type="button">
+                    <span class="trigger-text">The Product Thinker</span>
+                </button>
+                <button class="hover-trigger" data-slide="3" type="button">
+                    <span class="trigger-text">The Visual Creator</span>
+                </button>
+                <button class="hover-trigger" data-slide="4" type="button">
+                    <span class="trigger-text">The Active Explorer</span>
+                </button>
             </div>
 
-            <div class="accordion-item" data-card="product">
-                <div class="accordion-header">
-                    <h3 class="accordion-title">The Product Thinker</h3>
-                    <span class="accordion-icon">+</span>
+            <!-- Right: Content Panels (clipPath switch) -->
+            <div class="hover-slider-content-wrap">
+                <div class="hover-slider-content active" data-content="0">
+                    <div class="edu-item">
+                        <div class="edu-main">
+                            <h3>Zhejiang Gongshang University</h3>
+                            <p class="edu-major">Economic Statistics</p>
+                        </div>
+                        <div class="edu-gpa">
+                            <span class="gpa-value">4.01</span>
+                            <span class="gpa-total">/5.0</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="accordion-content">
-                    <p>I bridge the gap between technical possibilities and user needs. With experience writing PRDs and designing interfaces in Figma, I create solutions that truly serve people.</p>
+                <div class="hover-slider-content" data-content="1">
+                    <p>I specialize in turning raw, messy data into clear, actionable insights using Python, R, and other statistical tools. Whether I'm cleaning datasets or building predictive models, my favorite part of the process is digging into complex information and uncovering the hidden patterns underneath.</p>
                 </div>
-            </div>
-
-            <div class="accordion-item" data-card="creative">
-                <div class="accordion-header">
-                    <h3 class="accordion-title">The Visual Creator</h3>
-                    <span class="accordion-icon">+</span>
+                <div class="hover-slider-content" data-content="2">
+                    <p>I act as the bridge between what users want and what engineering can build. I regularly map out business workflows, design interactive prototypes in Figma, and write clear, structured PRDs. By keeping documentation organized and solutions practical, I help teams turn ideas into shipped features smoothly.</p>
                 </div>
-                <div class="accordion-content">
-                    <p>As a Director at "Ji+" Media Center and twice-honored Top 10 Visual Journalist, I tell stories through visuals. Whether through photography, video, or design—I communicate with impact.</p>
+                <div class="hover-slider-content" data-content="3">
+                    <p>I spent three years at my university's "Ji+" Media Center, eventually stepping up as Director and earning the Top 10 Visual Journalist award twice. Photography is how I tell stories and make sense of the world. Driven by an endless curiosity, I'm always looking for new ways to capture life through my own unique visual lens.</p>
+                </div>
+                <div class="hover-slider-content" data-content="4">
+                    <p>Away from the screen, I love outdoor sports and fitness. For me, the dopamine release after a good sweat does more than just keep me physically fit—it recharges my brain. This energetic lifestyle keeps my mind sharp, allowing me to tackle work challenges with ease and truly enjoy every single moment of life.</p>
                 </div>
             </div>
         </div>

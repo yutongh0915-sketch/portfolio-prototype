@@ -85,70 +85,49 @@
 
                 <!-- Horizontal Scroll Container -->
                 <div class="project-scroll-container">
-                    <!-- Slide 1: Overview -->
+                    <!-- Slide 1: Overview & Background -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">Project Overview Diagram</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Overview</h4>
+                            <h4 class="slide-title">Overview &amp; Background</h4>
                             <div class="slide-section">
                                 <h5 class="section-label">Context</h5>
-                                <p>Dancing with the Stars struggles with the conflict between expert technical scoring and subjective fan voting, often leading to controversial eliminations.</p>
+                                <p>The show "Dancing with the Stars" struggles with the conflict between expert technical scoring and subjective fan voting, often leading to controversial elimination results.</p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label">Objective</h5>
-                                <p>To develop a mathematical framework that estimates hidden fan voting data, evaluates past scoring rules, and proposes a fairer voting mechanism.</p>
+                                <p>To develop a mathematical model that estimates hidden fan voting data, evaluates past scoring rules, and proposes a fairer voting mechanism.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>As the core modeler on the team, I led the design and code implementation of the underlying algorithmic framework. I was responsible for building a vote estimation model using Monte Carlo algorithms and translating complex audience psychology into quantifiable, interpretable mathematical features through Random Forest and SHAP attribution analysis in machine learning.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2: Methodologies -->
+                    <!-- Slide 2: Core Methodologies -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">SHAP Attribution Chart</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Methodologies</h4>
+                            <h4 class="slide-title">Core Methodologies</h4>
                             <ul class="methodology-list">
-                                <li><strong>PL-PECON (Latent Preference Decoding):</strong> Used Monte Carlo Rejection Sampling to convert fan votes into a high-dimensional constrained inverse problem, establishing a dynamic rationality upper bound $\gamma \approx 2.3$ to successfully reproduce historical elimination lists with a 96.73% consistency rate.</li>
-                                <li><strong>PRIME-AMC (Mechanism Comparison):</strong> Deployed a Probabilistic Reconstruction & Information-Markov Evaluation model using Absorbing Markov Chains to simulate counterfactual competition trajectories.</li>
-                                <li><strong>DSRF-SHAP (Factor Decoupling):</strong> Implemented a Dual-Stream Random Forest with SHAP to decode voting drivers, revealing that judges prioritize technical proficiency (partner synergy contributes >35%).</li>
-                                <li><strong>SARF (System Optimization):</strong> Proposed a Sigmoid-Gated Adaptive Rank Fusion system maintaining high rank-skill correlation (Spearman 0.9-1.0).</li>
+                                <li><strong>PL-PECON:</strong> Used Monte Carlo rejection sampling to decode latent fan preferences, achieving a 96.73% historical consistency rate.</li>
+                                <li><strong>PRIME-AMC:</strong> Used Markov Chains to evaluate and contrast the scoring effects of ranking versus percentage methods.</li>
+                                <li><strong>DSRF-SHAP:</strong> Combined SHAP with a Dual-Stream Random Forest model to decouple voting drivers.</li>
+                                <li><strong>SARF:</strong> A Sigmoid-gated adaptive rank fusion that conditionally activates fan votes based on technical thresholds.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Slide 3: Impact -->
+                    <!-- Slide 3: Research Findings -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">Ranking vs Percentage Method Comparison</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Impact & Skills</h4>
+                            <h4 class="slide-title">Research Findings</h4>
                             <div class="slide-section">
-                                <h5 class="section-label">Key Finding</h5>
-                                <p>The percentage method is biased toward fan votes (high popularity overrides professional scores when dispersion exceeds 0.6), whereas the ranking method suppresses extreme variance and maintains a high SNR of 0.96.</p>
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>When a percentage-based voting method is adopted, there is a severe bias towards fan votes. Conversely, the ranking method effectively suppresses extreme variance and maintains a high signal-to-noise ratio of 0.96.</p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label">Strategic Recommendation</h5>
-                                <p>Submitted a memorandum recommending a hybrid strategy combining the ranking method with the "Judges' Save" mechanism, paired with a dynamic gating strategy.</p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Monte Carlo</span>
-                                <span class="tag">Markov Chains</span>
-                                <span class="tag">Random Forest</span>
-                                <span class="tag">Math Modeling</span>
+                                <p>Recommended a hybrid strategy combining the ranking method with a "Judges' Save" mechanism, supplemented by dynamic gating, to ensure the trophy truly represents dancing excellence.</p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +162,7 @@
 
             <div class="project-expanded">
                 <div class="project-subtitle-bar">
-                    <p>A data-driven analysis to uncover the core features of highly "liked" user-generated travel content on Qunar.</p>
+                    <p>Revealing the core characteristics of highly-liked user travel guides on Qunar.com through data-driven analysis.</p>
                 </div>
 
                 <div class="scroll-dots">
@@ -193,68 +172,48 @@
                 </div>
 
                 <div class="project-scroll-container">
-                    <!-- Slide 1: Overview -->
+                    <!-- Slide 1: Overview & Background -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">UGC Engagement Analysis</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Overview</h4>
+                            <h4 class="slide-title">Overview &amp; Background</h4>
                             <div class="slide-section">
                                 <h5 class="section-label">Context</h5>
-                                <p>While User-Generated Content (UGC) shapes modern travel decisions, content creators and platforms struggle to identify what truly drives user engagement and high "likes" for Hainan tourism guides.</p>
+                                <p>Although highly-liked travel guides on the internet profoundly influence modern travel planning, it is difficult for both content creators and platforms to accurately identify what factors drive this high engagement.</p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label">Objective</h5>
-                                <p>To build a robust predictive model using machine learning and NLP that identifies the key factors driving high engagement, providing actionable strategies for content creators and platform algorithms.</p>
+                                <p>To build predictive models using machine learning and natural language processing techniques, identify key drivers of "likes," and provide actionable strategies.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>As the lead data analyst, I independently completed the entire data mining process, from unstructured text processing to feature engineering. I proficiently utilized NLP techniques to clean and parse massive amounts of text, and built Decision Tree and Quantile Regression models to transform discrete text content into predictive metrics.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2: Methodologies -->
+                    <!-- Slide 2: Core Methodologies -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">LDA Topic Map</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Methodologies</h4>
+                            <h4 class="slide-title">Core Methodologies</h4>
                             <ul class="methodology-list">
-                                <li><strong>Semantic Analysis & NLP:</strong> Applied text mining and LDA (Latent Dirichlet Allocation) topic modeling to extract structured features from unstructured travel guides, identifying distinct thematic clusters like "Hainan natural landscapes."</li>
-                                <li><strong>Quantile Regression Analysis:</strong> Utilized quantile regression to analyze the non-linear impact of "per capita consumption" on engagement, revealing a negative correlation for low-to-mid engagement guides.</li>
-                                <li><strong>Decision Tree Classification:</strong> Built and optimized a Decision Tree classifier (incorporating Grid Search for hyperparameter tuning) to predict high-engagement likelihood.</li>
+                                <li><strong>Semantic Analysis &amp; NLP:</strong> Applied text mining and LDA topic modeling to extract structured features from unstructured travelogues.</li>
+                                <li><strong>Quantile Regression:</strong> Analyzed the non-linear impact of per capita consumption, revealing a negative correlation in low-to-medium engagement content, but an insignificant impact in top-tier, highly-liked content.</li>
+                                <li><strong>Decision Tree Classification:</strong> Built and optimized a classifier using grid search to predict the likelihood of high engagement based on dimensions such as travel group type, attractions, and number of photos.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Slide 3: Impact -->
+                    <!-- Slide 3: Research Findings -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">Feature Importance Chart</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Impact & Skills</h4>
+                            <h4 class="slide-title">Research Findings</h4>
                             <div class="slide-section">
-                                <h5 class="section-label">Key Finding</h5>
-                                <p>Feature importance analysis revealed that mentioning "Shopping" (0.550) and "Food" (0.160) are the strongest predictors of high engagement. Guides tailored to "Family" or "Friends" trips generated significantly higher interactions.</p>
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>"Shopping" (0.550) and "Food" (0.160) are the strongest predictors, with weights far exceeding the mere mention of popular beaches. Furthermore, travelogues featuring "family" or "friends" traveling together have higher engagement rates.</p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label">Strategic Recommendation</h5>
-                                <p>Formulated actionable content creation formulas (e.g., combining in-depth travel, food, and photography elements for group trips) to maximize user engagement.</p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">NLP (LDA)</span>
-                                <span class="tag">Quantile Regression</span>
-                                <span class="tag">Business Analytics</span>
+                                <p>Formulated a content creation formula (e.g., combining in-depth tours, food, and photography for group travel) to maximize engagement rates and optimize the platform's recommendation algorithms.</p>
                             </div>
                         </div>
                     </div>
@@ -288,7 +247,7 @@
 
             <div class="project-expanded">
                 <div class="project-subtitle-bar">
-                    <p>Exploring the impact of regional business culture on corporate green transformation and resilience through mixed methods.</p>
+                    <p>Employing a mixed-methods research approach to deeply explore the impact of regional business culture on corporate green transition and organizational resilience.</p>
                 </div>
 
                 <div class="scroll-dots">
@@ -298,69 +257,48 @@
                 </div>
 
                 <div class="project-scroll-container">
-                    <!-- Slide 1: Overview -->
+                    <!-- Slide 1: Overview & Background -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">Green Transformation Context</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Overview</h4>
+                            <h4 class="slide-title">Overview &amp; Background</h4>
                             <div class="slide-section">
                                 <h5 class="section-label">Context</h5>
-                                <p>In the face of economic transitions and the "Dual Carbon" goals, traditional manufacturing enterprises face severe challenges in green transformation.</p>
+                                <p>Against the backdrop of the "Dual Carbon" goals, traditional manufacturing enterprises face severe challenges during their green transition.</p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label">Objective</h5>
-                                <p>To investigate how the "Zhejiang Entrepreneurship Spirit" (Zheshang Spirit) acts as an informal institution to drive green value creation and enhance organizational resilience.</p>
+                                <p>To investigate how the "Zhejiang Entrepreneurship Spirit" drives corporate value creation and enhances organizational resilience using empirical data and case studies.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>I was deeply involved in field research and data analysis. I performed multi-level coding on 60,000 words of in-depth interview transcripts, achieving a perfect integration of data models and business narratives.</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Slide 2: Methodologies -->
+                    <!-- Slide 2: Core Methodologies -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">APCC Dynamic Model</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Methodologies</h4>
+                            <h4 class="slide-title">Core Methodologies</h4>
                             <ul class="methodology-list">
-                                <li><strong>Empirical Analysis (SEM & IPA):</strong> Collected survey data from 264 startups. Utilized Structural Equation Modeling (SEM) to quantify impacts of entrepreneurial spirit on organizational resilience.</li>
-                                <li><strong>Longitudinal Case Study (APCC Model):</strong> Conducted an in-depth study of Hangzhou Iron & Steel Group's 10-year green transformation. Developed the "APCC" dynamic model to decode resource orchestration.</li>
-                                <li><strong>Field Research & Text Mining:</strong> Conducted over 5 hours of interviews with senior management, generating a 60,000-word transcript with multi-level coding analysis.</li>
+                                <li><strong>Empirical Analysis:</strong> Conducted a questionnaire survey of 264 startups. Used Structural Equation Modeling (SEM) to quantify impact paths, and applied Importance-Performance Analysis (IPA) to process interview texts.</li>
+                                <li><strong>Longitudinal Case Study:</strong> Conducted an in-depth analysis of Hangang Group's 10-year transition journey, constructing the APCC (Antecedents-Process-Consequences-Chinese Context) model.</li>
+                                <li><strong>Field Research:</strong> Conducted over 5 hours of in-depth interviews, compiled 60,000 words of verbatim transcripts, and used multi-level coding for qualitative comprehensive analysis.</li>
                             </ul>
                         </div>
                     </div>
 
-                    <!-- Slide 3: Impact -->
+                    <!-- Slide 3: Research Findings -->
                     <div class="project-slide">
-                        <div class="slide-visual">
-                            <div class="visual-placeholder">
-                                <span class="placeholder-text">Visual Asset</span>
-                                <span class="placeholder-subtext">Resilience Pathways Diagram</span>
-                            </div>
-                        </div>
                         <div class="slide-content">
-                            <h4 class="slide-title">Impact & Skills</h4>
+                            <h4 class="slide-title">Research Findings</h4>
                             <div class="slide-section">
-                                <h5 class="section-label">Key Finding</h5>
-                                <p>Validated that regional entrepreneurial spirit significantly enhances organizational resilience through four paths: boosting risk-taking, promoting cooperation, easing financial constraints, and strengthening responsibility.</p>
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>Validated that regional spirit can enhance corporate resilience by stimulating a willingness to take risks, promoting cooperation, alleviating financing constraints, and strengthening a sense of responsibility.</p>
                             </div>
                             <div class="slide-section">
-                                <h5 class="section-label">Recognition</h5>
-                                <p>The case study report won the First Prize in the 11th Zhejiang Provincial University Student Economic Case Analysis Competition (University Level).</p>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">SEM</span>
-                                <span class="tag">Case Study</span>
-                                <span class="tag">Field Research</span>
-                                <span class="tag">ESG</span>
-                                <span class="tag">Strategy</span>
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Proposed a synergistic strategy combining an "efficient market" with a "proactive government" for policymakers, providing a roadmap for the transformation of the traditional manufacturing industry.</p>
                             </div>
                         </div>
                     </div>

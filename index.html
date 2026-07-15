@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- MathJax for LaTeX rendering (Projects section) -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="home-page">
     <!-- Background Gradient -->
@@ -16,35 +25,49 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-inner">
-            <a href="index.html" class="nav-brand">
+            <a href="#hero" class="nav-brand">
                 <span class="nav-logo">HYT</span>
                 <span class="nav-text">PORTFOLIO</span>
             </a>
             <div class="nav-links">
-                <a href="about.html" class="nav-link">About</a>
-                <a href="skills.html" class="nav-link">Skills</a>
-                <a href="work.html" class="nav-link">Projects</a>
-                <a href="internships.html" class="nav-link">Internships</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#internships" class="nav-link">Internships</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="nav-toggle">
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <button class="nav-collapse-btn" aria-label="收起导航栏" title="收起导航栏">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"/>
+                    </svg>
+                </button>
+                <button class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- 浮动恢复按钮（导航栏收起后显示） -->
+    <button class="nav-restore-btn" aria-label="展开导航栏" title="展开导航栏">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"/>
+        </svg>
+    </button>
+
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <a href="about.html" class="mobile-link">About</a>
-        <a href="skills.html" class="mobile-link">Skills</a>
-        <a href="work.html" class="mobile-link">Projects</a>
-        <a href="internships.html" class="mobile-link">Internships</a>
-        <a href="contact.html" class="mobile-link">Contact</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#internships" class="mobile-link">Internships</a>
+        <a href="#contact" class="mobile-link">Contact</a>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <!-- Left Content -->
         <div class="hero-content">
             <div class="hero-greeting">
@@ -53,17 +76,16 @@
             </div>
 
             <div class="hero-intro">
-                <p>Welcome to my digital space! I'm a curious, data-driven innovator currently majoring in <span class="highlight">Economic Statistics</span> at <span class="highlight">Zhejiang Gongshang University</span>.</p>
-                <p>I love diving deep into massive datasets, turning complex statistical models and machine learning into real-world business insights.</p>
-                <p>From developing predictive algorithms to hands-on product design, I always approach problem-solving with strict data logic.</p>
-                <p>Outside of work and study, you'll find me behind a camera or at the gym—always looking for life's little joys and pushing myself to grow.</p>
-                <p class="intro-closing">I'm so glad you're here to share in my journey!</p>
+                <p>Welcome to my space! I'm an <span class="highlight">Economic Statistics</span> major at <span class="highlight">Zhejiang Gongshang University</span>, driven by curiosity and a passion for exploring the evolving intersection of AI and data.</p>
+                <p>I thrive on diving into massive datasets and specializing in data analysis. My strength lies in combining statistical models with machine learning to uncover hidden value and deliver actionable solutions. While data analysis built my professional foundation, product design sharpened my logic, ensuring I approach every problem with a rigorous, analytical mindset.</p>
+                <p>Outside of work and academics, you'll usually find me behind a camera, exploring the outdoors, or at the gym. I love capturing life's little joys, constantly challenging myself, and striving for continuous growth.</p>
+                <p class="intro-closing">I'm so glad you're here to share this journey with me!</p>
             </div>
 
             <div class="hero-roles">
-                <div class="role-pill">Data Analyst</div>
-                <div class="role-pill">Product Manager</div>
-                <div class="role-pill">Visual Creator</div>
+                <div class="role-pill">Data Analysis</div>
+                <div class="role-pill">Product Design</div>
+                <div class="role-pill">Visual Creation</div>
             </div>
         </div>
 
@@ -133,7 +155,7 @@
             <span class="quick-links-title">EXPLORE THE CURRENT</span>
         </div>
         <div class="quick-links-container">
-            <a href="about.html" class="quick-link" data-link="about">
+            <a href="#about" class="quick-link" data-link="about">
                 <span class="link-number">01</span>
                 <div class="link-info">
                     <h3>About Me</h3>
@@ -142,7 +164,7 @@
                 <span class="link-arrow">→</span>
             </a>
 
-            <a href="skills.html" class="quick-link" data-link="skills">
+            <a href="#skills" class="quick-link" data-link="skills">
                 <span class="link-number">02</span>
                 <div class="link-info">
                     <h3>Skills</h3>
@@ -151,7 +173,7 @@
                 <span class="link-arrow">→</span>
             </a>
 
-            <a href="work.html" class="quick-link" data-link="work">
+            <a href="#projects" class="quick-link" data-link="work">
                 <span class="link-number">03</span>
                 <div class="link-info">
                     <h3>Projects</h3>
@@ -160,7 +182,7 @@
                 <span class="link-arrow">→</span>
             </a>
 
-            <a href="internships.html" class="quick-link" data-link="journey">
+            <a href="#internships" class="quick-link" data-link="journey">
                 <span class="link-number">04</span>
                 <div class="link-info">
                     <h3>Internships</h3>
@@ -169,7 +191,7 @@
                 <span class="link-arrow">→</span>
             </a>
 
-            <a href="contact.html" class="quick-link" data-link="contact">
+            <a href="#contact" class="quick-link" data-link="contact">
                 <span class="link-number">05</span>
                 <div class="link-info">
                     <h3>Contact</h3>
@@ -177,6 +199,638 @@
                 </div>
                 <span class="link-arrow">→</span>
             </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="page-header" id="about">
+        <span class="page-number">01</span>
+        <h1 class="page-title">About Me</h1>
+        <p class="page-subtitle">Data · Product · Creative</p>
+    </section>
+
+    <section class="about-section">
+        <div class="hover-slider" data-hover-slider>
+            <div class="hover-slider-triggers">
+                <button class="hover-trigger active" data-slide="0" type="button">
+                    <span class="trigger-text">Education</span>
+                </button>
+                <button class="hover-trigger" data-slide="1" type="button">
+                    <span class="trigger-text">The Data Analyst</span>
+                </button>
+                <button class="hover-trigger" data-slide="2" type="button">
+                    <span class="trigger-text">The Product Thinker</span>
+                </button>
+                <button class="hover-trigger" data-slide="3" type="button">
+                    <span class="trigger-text">The Visual Creator</span>
+                </button>
+                <button class="hover-trigger" data-slide="4" type="button">
+                    <span class="trigger-text">The Active Explorer</span>
+                </button>
+            </div>
+
+            <div class="hover-slider-content-wrap">
+                <div class="hover-slider-content active" data-content="0">
+                    <div class="edu-item">
+                        <div class="edu-main">
+                            <h3>Zhejiang Gongshang University</h3>
+                            <p class="edu-major">Economic Statistics</p>
+                        </div>
+                        <div class="edu-gpa">
+                            <span class="gpa-value">4.01</span>
+                            <span class="gpa-total">/5.0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hover-slider-content" data-content="1">
+                    <p>I specialize in turning raw, messy data into clear, actionable insights using Python, R, and other statistical tools. Whether I'm cleaning datasets or building predictive models, my favorite part of the process is digging into complex information and uncovering the hidden patterns underneath.</p>
+                </div>
+                <div class="hover-slider-content" data-content="2">
+                    <p>I act as the bridge between what users want and what engineering can build. I regularly map out business workflows, design interactive prototypes in Figma, and write clear, structured PRDs. By keeping documentation organized and solutions practical, I help teams turn ideas into shipped features smoothly.</p>
+                </div>
+                <div class="hover-slider-content" data-content="3">
+                    <p>I spent three years at my university's "Ji+" Media Center, eventually stepping up as Director and earning the Top 10 Visual Journalist award twice. Photography is how I tell stories and make sense of the world. Driven by an endless curiosity, I'm always looking for new ways to capture life through my own unique visual lens.</p>
+                </div>
+                <div class="hover-slider-content" data-content="4">
+                    <p>Away from the screen, I love outdoor sports and fitness. For me, the dopamine release after a good sweat does more than just keep me physically fit—it recharges my brain. This energetic lifestyle keeps my mind sharp, allowing me to tackle work challenges with ease and truly enjoy every single moment of life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-page-header" id="skills">
+        <span class="header-label">02</span>
+        <h1 class="header-title">
+            <span class="title-main">Skills</span>
+            <span class="title-accent">Universe</span>
+        </h1>
+        <p class="header-subtitle">WHERE ANALYTICAL THINKING MEETS CREATIVE EXPRESSION</p>
+    </section>
+
+    <section class="archive-cards-section">
+        <div class="archive-card archive-mustard">
+            <div class="card-top">
+                <span class="card-number">01</span>
+                <h3 class="card-title">Data Analytics</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 25s;">
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Python</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">R Language</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">MATLAB</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Excel</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">LSTM</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">XGBoost</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">NLP</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Python</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">R Language</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">MATLAB</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Excel</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">LSTM</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">XGBoost</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">NLP</span></div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <div class="archive-card archive-terracotta">
+            <div class="card-top">
+                <span class="card-number">02</span>
+                <h3 class="card-title">Product & Design</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 22s;">
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">PRD Writing</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">UX Research</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Data Storytelling</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">User Flows</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Wireframing</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Interaction Design</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">PRD Writing</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">UX Research</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Data Storytelling</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">User Flows</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Wireframing</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Interaction Design</span></div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <div class="archive-card archive-orange">
+            <div class="card-top">
+                <span class="card-number">03</span>
+                <h3 class="card-title">Research Methods</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 24s;">
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Monte Carlo Simulation</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Structural Equation Modeling</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Text Mining & NLP</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Quantile Regression</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Markov Chains</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Field Research & Survey</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Monte Carlo Simulation</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Structural Equation Modeling</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Text Mining & NLP</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Quantile Regression</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Markov Chains</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Field Research & Survey</span></div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+
+        <div class="archive-card archive-khaki">
+            <div class="card-top">
+                <span class="card-number">04</span>
+                <h3 class="card-title">Tools</h3>
+                <span class="card-label">FIELD NOTES / SKILLS</span>
+            </div>
+            <div class="card-marquee">
+                <div class="marquee-list" style="--duration: 20s;">
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Python</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">R</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">VS Code</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">GitHub</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Figma</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">PS</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">LR</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">EXCEL</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Power BI</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Power Query</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Python</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">R</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">VS Code</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">GitHub</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Figma</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">PS</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">LR</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">EXCEL</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Power BI</span></div>
+                    <div class="skill-item"><span class="skill-bullet"></span><span class="skill-text">Power Query</span></div>
+                </div>
+            </div>
+            <div class="card-bottom">
+                <span class="bottom-label">COLLECTION</span>
+                <span class="bottom-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight-cards">
+        <div class="highlight-card">
+            <h3 class="highlight-title">English Proficiency</h3>
+            <div class="score-grid">
+                <div class="score-item">
+                    <span class="score-value">7.0</span>
+                    <span class="score-label">IELTS Academic</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-value">321</span>
+                    <span class="score-label">GRE</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-card">
+            <h3 class="highlight-title">Photography & Media</h3>
+            <div class="achievement-list">
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">Passionate about photography</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">2x Top 10 Visual Journalist Award</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="achievement-bullet"></span>
+                    <span class="achievement-text">Director of Converged Media Center</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="photography-section">
+        <h2 class="section-title">Photography Portfolio</h2>
+        <p class="section-desc">Capturing moments, telling stories through my lens</p>
+        <div class="photo-grid" id="photoGrid"></div>
+    </section>
+
+    <!-- Photo Lightbox Overlay -->
+    <div class="photo-lightbox" id="photoLightbox">
+        <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close">×</button>
+        <img class="lightbox-photo" id="lightboxPhoto" src="" alt="">
+    </div>
+
+    <!-- Projects Section -->
+    <section class="page-header" id="projects">
+        <span class="page-number">03</span>
+        <h1 class="page-title">Selected Projects</h1>
+        <p class="page-subtitle">Data-driven projects and research</p>
+    </section>
+
+    <section class="projects-section">
+        <div class="project-item" data-project="1">
+            <div class="project-header">
+                <div class="project-header-left">
+                    <span class="project-number">01</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Dancing with the Stars: The Mirrorball's Destiny</h3>
+                        <p class="project-metadata">2026 Mathematical Contest In Modeling (MCM) | 01/2026 - 02/2026</p>
+                    </div>
+                </div>
+                <span class="accordion-icon">+</span>
+            </div>
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>Investigating the conflict between professional elitism and mass public appeal in reality TV voting systems.</p>
+                </div>
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+                <div class="project-scroll-container">
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview &amp; Background</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>The show "Dancing with the Stars" struggles with the conflict between expert technical scoring and subjective fan voting, often leading to controversial elimination results.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To develop a mathematical model that estimates hidden fan voting data, evaluates past scoring rules, and proposes a fairer voting mechanism.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>As the core modeler on the team, I led the design and code implementation of the underlying algorithmic framework. I was responsible for building a vote estimation model using Monte Carlo algorithms and translating complex audience psychology into quantifiable, interpretable mathematical features through Random Forest and SHAP attribution analysis in machine learning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Core Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>PL-PECON:</strong> Used Monte Carlo rejection sampling to decode latent fan preferences, achieving a 96.73% historical consistency rate.</li>
+                                <li><strong>PRIME-AMC:</strong> Used Markov Chains to evaluate and contrast the scoring effects of ranking versus percentage methods.</li>
+                                <li><strong>DSRF-SHAP:</strong> Combined SHAP with a Dual-Stream Random Forest model to decouple voting drivers.</li>
+                                <li><strong>SARF:</strong> A Sigmoid-gated adaptive rank fusion that conditionally activates fan votes based on technical thresholds.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Research Findings</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>When a percentage-based voting method is adopted, there is a severe bias towards fan votes. Conversely, the ranking method effectively suppresses extreme variance and maintains a high signal-to-noise ratio of 0.96.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Recommended a hybrid strategy combining the ranking method with a "Judges' Save" mechanism, supplemented by dynamic gating, to ensure the trophy truly represents dancing excellence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="project-item" data-project="2">
+            <div class="project-header">
+                <div class="project-header-left">
+                    <span class="project-number">02</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Hainan Tourism Research: Predicting High-Engagement Guides</h3>
+                        <p class="project-metadata">2025 "Academic Excellence Climbing Program" | 11/2025</p>
+                    </div>
+                </div>
+                <span class="accordion-icon">+</span>
+            </div>
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>Revealing the core characteristics of highly-liked user travel guides on Qunar.com through data-driven analysis.</p>
+                </div>
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+                <div class="project-scroll-container">
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview &amp; Background</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>Although highly-liked travel guides on the internet profoundly influence modern travel planning, it is difficult for both content creators and platforms to accurately identify what factors drive this high engagement.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To build predictive models using machine learning and natural language processing techniques, identify key drivers of "likes," and provide actionable strategies.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>As the lead data analyst, I independently completed the entire data mining process, from unstructured text processing to feature engineering. I proficiently utilized NLP techniques to clean and parse massive amounts of text, and built Decision Tree and Quantile Regression models to transform discrete text content into predictive metrics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Core Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>Semantic Analysis &amp; NLP:</strong> Applied text mining and LDA topic modeling to extract structured features from unstructured travelogues.</li>
+                                <li><strong>Quantile Regression:</strong> Analyzed the non-linear impact of per capita consumption, revealing a negative correlation in low-to-medium engagement content, but an insignificant impact in top-tier, highly-liked content.</li>
+                                <li><strong>Decision Tree Classification:</strong> Built and optimized a classifier using grid search to predict the likelihood of high engagement based on dimensions such as travel group type, attractions, and number of photos.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Research Findings</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>"Shopping" (0.550) and "Food" (0.160) are the strongest predictors, with weights far exceeding the mere mention of popular beaches. Furthermore, travelogues featuring "family" or "friends" traveling together have higher engagement rates.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Formulated a content creation formula (e.g., combining in-depth tours, food, and photography for group travel) to maximize engagement rates and optimize the platform's recommendation algorithms.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="project-item" data-project="3">
+            <div class="project-header">
+                <div class="project-header-left">
+                    <span class="project-number">03</span>
+                    <div class="project-title-group">
+                        <h3 class="project-title">Zhejiang Entrepreneurship & Organizational Resilience</h3>
+                        <p class="project-metadata">ZJSU College Students Innovation & Entrepreneurship Training Program | 04/2025 - Present</p>
+                    </div>
+                </div>
+                <span class="accordion-icon">+</span>
+            </div>
+            <div class="project-expanded">
+                <div class="project-subtitle-bar">
+                    <p>Employing a mixed-methods research approach to deeply explore the impact of regional business culture on corporate green transition and organizational resilience.</p>
+                </div>
+                <div class="scroll-dots">
+                    <button class="scroll-dot active" data-slide="0" aria-label="Overview"></button>
+                    <button class="scroll-dot" data-slide="1" aria-label="Methodologies"></button>
+                    <button class="scroll-dot" data-slide="2" aria-label="Impact"></button>
+                </div>
+                <div class="project-scroll-container">
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Overview &amp; Background</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Context</h5>
+                                <p>Against the backdrop of the "Dual Carbon" goals, traditional manufacturing enterprises face severe challenges during their green transition.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Objective</h5>
+                                <p>To investigate how the "Zhejiang Entrepreneurship Spirit" drives corporate value creation and enhances organizational resilience using empirical data and case studies.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Role</h5>
+                                <p>I was deeply involved in field research and data analysis. I performed multi-level coding on 60,000 words of in-depth interview transcripts, achieving a perfect integration of data models and business narratives.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Core Methodologies</h4>
+                            <ul class="methodology-list">
+                                <li><strong>Empirical Analysis:</strong> Conducted a questionnaire survey of 264 startups. Used Structural Equation Modeling (SEM) to quantify impact paths, and applied Importance-Performance Analysis (IPA) to process interview texts.</li>
+                                <li><strong>Longitudinal Case Study:</strong> Conducted an in-depth analysis of Hangang Group's 10-year transition journey, constructing the APCC (Antecedents-Process-Consequences-Chinese Context) model.</li>
+                                <li><strong>Field Research:</strong> Conducted over 5 hours of in-depth interviews, compiled 60,000 words of verbatim transcripts, and used multi-level coding for qualitative comprehensive analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project-slide">
+                        <div class="slide-content">
+                            <h4 class="slide-title">Research Findings</h4>
+                            <div class="slide-section">
+                                <h5 class="section-label">Key Findings</h5>
+                                <p>Validated that regional spirit can enhance corporate resilience by stimulating a willingness to take risks, promoting cooperation, alleviating financing constraints, and strengthening a sense of responsibility.</p>
+                            </div>
+                            <div class="slide-section">
+                                <h5 class="section-label">Strategic Recommendation</h5>
+                                <p>Proposed a synergistic strategy combining an "efficient market" with a "proactive government" for policymakers, providing a roadmap for the transformation of the traditional manufacturing industry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-nav scroll-nav-prev" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <button class="scroll-nav scroll-nav-next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internships Section -->
+    <section class="page-header" id="internships">
+        <span class="page-number">04</span>
+        <h1 class="page-title">My Internships</h1>
+        <p class="page-subtitle">Professional experience in data, product, and research</p>
+    </section>
+
+    <section class="journey-section">
+        <div class="timeline-component" data-timeline>
+            <div class="timeline-body" data-timeline-body>
+                <div class="timeline-entry">
+                    <div class="timeline-entry-left">
+                        <div class="timeline-marker">
+                            <div class="timeline-marker-inner"></div>
+                        </div>
+                        <div class="timeline-entry-meta">
+                            <h3 class="timeline-entry-title">07/2025 - 10/2025</h3>
+                            <p class="timeline-entry-org">Digital Zhejiang Technology</p>
+                            <p class="timeline-entry-role">Product Management Intern</p>
+                        </div>
+                    </div>
+                    <div class="timeline-entry-right">
+                        <div class="timeline-entry-content">
+                            <ul class="contribution-list">
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">0-to-1 Product Design</strong>
+                                    <p class="contribution-desc">Spearheaded the end-to-end requirement design for the core "Data Correction" module. Created high-fidelity Figma prototypes and comprehensive PRDs, streamlining the workflow by removing 30% of redundant features while introducing critical new capabilities like batch selection and draft saving.</p>
+                                </li>
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">User-Centric Research</strong>
+                                    <p class="contribution-desc">Conducted on-site field visits and 1-on-1 interviews with front-line users to identify usability blockers. Synthesized findings into 8 core business pain points, providing data-driven evidence that guided the optimization of multi-level approvals and batch operations.</p>
+                                </li>
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Workflow Standardization</strong>
+                                    <p class="contribution-desc">Deconstructed and mapped a complex 5-level approval workflow involving 6 distinct user roles. Authored over 10 standardized operational manuals, successfully unifying system terminology and significantly reducing training costs for grassroots users.</p>
+                                </li>
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Cross-Functional Agile Delivery</strong>
+                                    <p class="contribution-desc">Actively participated in requirement and QA review meetings, aligning understanding across UI, development, and testing teams. Tracked project schedules and facilitated continuous version iterations to ensure seamless feature deployment.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-entry-left">
+                        <div class="timeline-marker">
+                            <div class="timeline-marker-inner"></div>
+                        </div>
+                        <div class="timeline-entry-meta">
+                            <h3 class="timeline-entry-title">07/2025 - 08/2025</h3>
+                            <p class="timeline-entry-org">Mach Loop Technology</p>
+                            <p class="timeline-entry-role">Software R&amp;D Intern</p>
+                        </div>
+                    </div>
+                    <div class="timeline-entry-right">
+                        <div class="timeline-entry-content">
+                            <ul class="contribution-list">
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Low-Level System Vulnerability Resolution</strong>
+                                    <p class="contribution-desc">Delved into memory management and network packet processing mechanisms. Assisted the development team in accurately locating and patching high-risk vulnerabilities at the system level, such as memory overflows and double-free errors, significantly enhancing the robustness and operational security of the system architecture.</p>
+                                </li>
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Network Threat Hunting &amp; Traceability</strong>
+                                    <p class="contribution-desc">Participated in the identification, investigation, and tracing of network traffic attack incidents. By extracting and analyzing abnormal traffic features, assisted in building an analysis pipeline for attack behaviors, delivering highly valuable business solutions for subsequent defense rule formulation and emergency response plans.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-entry">
+                    <div class="timeline-entry-left">
+                        <div class="timeline-marker">
+                            <div class="timeline-marker-inner"></div>
+                        </div>
+                        <div class="timeline-entry-meta">
+                            <h3 class="timeline-entry-title">07/2024 - 08/2024</h3>
+                            <p class="timeline-entry-org">Xiangshan D&amp;R Bureau</p>
+                            <p class="timeline-entry-role">Data Analysis Intern</p>
+                        </div>
+                    </div>
+                    <div class="timeline-entry-right">
+                        <div class="timeline-entry-content">
+                            <ul class="contribution-list">
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Macroeconomic Trend Monitoring</strong>
+                                    <p class="contribution-desc">Participated in the daily dynamic monitoring and risk early-warning mechanisms for county-level economic operations. Integrating regional industrial characteristics with historical cycle data, assisted in producing economic performance analysis reports to provide objective and timely data references for macroeconomic regulation and policy formulation by relevant departments.</p>
+                                </li>
+                                <li class="contribution-item">
+                                    <strong class="contribution-title">Multi-Source Government Data Governance</strong>
+                                    <p class="contribution-desc">Responsible for aligning and processing fundamental macroeconomic indicators. Efficiently completed the collection, cleaning, multi-dimensional cross-verification, and statistical analysis of complex data. Applied strict data validation logic to ensure the absolute accuracy and consistency of core government data.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-track-bg">
+                    <div class="timeline-track-progress" data-timeline-progress></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="page-header" id="contact">
+        <span class="page-number">05</span>
+        <h1 class="page-title">Let's Connect</h1>
+        <p class="page-subtitle">Open to opportunities and collaborations</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-intro">
+            <p>I'm always excited to connect with like-minded individuals and explore new opportunities. Whether you have a project in mind, want to discuss data and product, or just want to say hi—feel free to reach out!</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-item">
+                <div class="contact-info">
+                    <span class="contact-label">Email</span>
+                    <div class="contact-emails">
+                        <a href="mailto:hyt_tt915@163.com" class="contact-value">hyt_tt915@163.com</a>
+                        <span class="email-separator">/</span>
+                        <a href="mailto:yutongh0915@gmail.com" class="contact-value">yutongh0915@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <span class="contact-label">Mobile</span>
+                    <span class="contact-value">(+86) 139-6839-9619</span>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Hangzhou, China</span>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-info">
+                    <span class="contact-label">University</span>
+                    <span class="contact-value">Zhejiang Gongshang University</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-cta">
+            <h2>Scan to Connect</h2>
+            <p>Add me on WeChat to stay in touch</p>
+            <div class="qrcode-container">
+                <img src="我的素材/二维码.jpg" alt="WeChat QR Code" class="qrcode-image">
+            </div>
         </div>
     </section>
 
