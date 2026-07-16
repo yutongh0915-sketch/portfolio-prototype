@@ -3499,3 +3499,105 @@ body {
         padding: 1.4rem 1.5rem;
     }
 }
+
+/* ===== Section Fade-in (板块级滚动淡入) ===== */
+.section-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    will-change: opacity, transform;
+}
+
+.section-fade.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-fade,
+    .section-fade.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ===== Language Toggle (中英双语切换) ===== */
+.lang-en .zh-text,
+.lang-zh .en-text {
+    display: none;
+}
+
+/* 中文字体栈：在 .lang-zh 作用域内覆盖字体变量，所有 var() 引用自动跟随 */
+.lang-zh {
+    --font-body: 'Manrope', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Hiragino Sans GB', sans-serif;
+    --font-display: 'Playfair Display', 'Songti SC', 'Noto Serif SC', 'STSong', serif;
+    --font-mono: 'DM Mono', 'PingFang SC', 'Microsoft YaHei', 'Source Han Sans SC', monospace;
+}
+
+/* 中文行高放宽，提升可读性 */
+.lang-zh body {
+    line-height: 1.75;
+}
+
+/* 胶囊形语言切换按钮，样式参考 .nav-collapse-btn */
+.lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 0.3s var(--ease),
+                color 0.3s var(--ease),
+                border-color 0.3s var(--ease),
+                transform 0.3s var(--ease);
+    white-space: nowrap;
+}
+
+.lang-toggle:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+
+/* 激活语言高亮：英文态 EN 加粗金色，中文态 中 加粗金色 */
+.lang-en .lang-toggle .lang-label-en,
+.lang-zh .lang-toggle .lang-label-zh {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* hover 时整体反白，激活色保持高亮 */
+.lang-toggle:hover .lang-label-en,
+.lang-toggle:hover .lang-label-zh {
+    color: #fff;
+}
+
+.lang-toggle .lang-sep {
+    opacity: 0.5;
+}
+
+/* 中文态反转按钮内部顺序：中 在左，EN 在右 */
+.lang-zh .lang-toggle {
+    flex-direction: row-reverse;
+}
+
+/* 移动端按钮紧凑一点 */
+@media (max-width: 768px) {
+    .lang-toggle {
+        padding: 0.35rem 0.7rem;
+        font-size: 0.72rem;
+    }
+}

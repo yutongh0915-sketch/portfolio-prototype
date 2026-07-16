@@ -333,6 +333,74 @@ function initScrollAnimations() {
     });
 }
 
+// ===== Section Fade-in (板块级滚动淡入) =====
+function initSectionFadeIn() {
+    // 尊重 prefers-reduced-motion：跳过隐藏，所有 section 保持可见
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const sections = document.querySelectorAll('section:not(.hero)');
+    const viewportH = window.innerHeight;
+
+    // 仅给视口下方的 section 加初始隐藏类，避免首屏内容闪烁
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top > viewportH * 0.5) {
+            section.classList.add('section-fade');
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -10% 0px'
+    });
+
+    document.querySelectorAll('.section-fade').forEach(section => observer.observe(section));
+}
+
+// ===== Language Toggle (中英双语切换) =====
+// 注意：初始语言由 <head> 内联 script 提前应用，避免页面加载时闪烁。
+// 此函数负责：1) 绑定按钮点击切换类；2) 同步 aria-label / title / alt 属性。
+function applyLangAttributes(lang) {
+    const attrMap = [
+        { attr: 'aria-label', en: 'data-aria-en', zh: 'data-aria-zh' },
+        { attr: 'title',      en: 'data-title-en', zh: 'data-title-zh' },
+        { attr: 'alt',        en: 'data-alt-en',   zh: 'data-alt-zh' }
+    ];
+    attrMap.forEach(({ attr, en, zh }) => {
+        const dataAttr = lang === 'zh' ? zh : en;
+        document.querySelectorAll(`[${dataAttr}]`).forEach(el => {
+            el.setAttribute(attr, el.getAttribute(dataAttr));
+        });
+    });
+}
+
+function initLanguageToggle() {
+    const toggle = document.querySelector('.lang-toggle');
+    const html = document.documentElement;
+
+    // 初始化属性（首屏），匹配 head 内联 script 已经应用的语言类
+    applyLangAttributes(html.classList.contains('lang-zh') ? 'zh' : 'en');
+
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const isZh = html.classList.contains('lang-zh');
+        const newLang = isZh ? 'en' : 'zh';
+        html.classList.remove('lang-en', 'lang-zh');
+        html.classList.add(newLang === 'zh' ? 'lang-zh' : 'lang-en');
+        html.lang = newLang === 'zh' ? 'zh-CN' : 'en';
+        localStorage.setItem('lang', newLang);
+        applyLangAttributes(newLang);
+    });
+}
+
 // ===== Skill Bar Animation =====
 function animateSkillBars() {
     const skillBars = document.querySelectorAll('.skill-fill');
@@ -524,6 +592,30 @@ function initInternshipAccordion() {
     });
 }
 
+// 拆分容器内文本为字符 span (char-wrap > char-default + char-active)
+function splitCharsToSpans(container) {
+    const text = container.textContent;
+    container.textContent = '';
+    const chars = text.split('');
+    chars.forEach((char, i) => {
+        const wrap = document.createElement('span');
+        wrap.className = 'char-wrap';
+        wrap.style.setProperty('--char-delay', `${i * 0.025}s`);
+
+        const charDefault = document.createElement('span');
+        charDefault.className = 'char char-default';
+        charDefault.textContent = char === ' ' ? ' ' : char;
+
+        const charActive = document.createElement('span');
+        charActive.className = 'char char-active';
+        charActive.textContent = char === ' ' ? ' ' : char;
+
+        wrap.appendChild(charDefault);
+        wrap.appendChild(charActive);
+        container.appendChild(wrap);
+    });
+}
+
 // ===== About HoverSlider =====
 function initHoverSlider() {
     const sliders = document.querySelectorAll('[data-hover-slider]');
@@ -532,32 +624,18 @@ function initHoverSlider() {
         const triggers = slider.querySelectorAll('.hover-trigger');
         const contents = slider.querySelectorAll('.hover-slider-content');
 
-        // 拆分每个 trigger 的文字为字符 span(char-wrap > char-default + char-active)
+        // 拆分每个 trigger 的文字为字符 span，支持双语 (en-text / zh-text 各自拆)
         triggers.forEach(trigger => {
             const textEl = trigger.querySelector('.trigger-text');
             if (!textEl || textEl.dataset.split === 'true') return;
-            const text = textEl.textContent;
-            textEl.textContent = '';
             textEl.dataset.split = 'true';
 
-            const chars = text.split('');
-            chars.forEach((char, i) => {
-                const wrap = document.createElement('span');
-                wrap.className = 'char-wrap';
-                wrap.style.setProperty('--char-delay', `${i * 0.025}s`);
-
-                const charDefault = document.createElement('span');
-                charDefault.className = 'char char-default';
-                charDefault.textContent = char === ' ' ? ' ' : char;
-
-                const charActive = document.createElement('span');
-                charActive.className = 'char char-active';
-                charActive.textContent = char === ' ' ? ' ' : char;
-
-                wrap.appendChild(charDefault);
-                wrap.appendChild(charActive);
-                textEl.appendChild(wrap);
-            });
+            const langSpans = textEl.querySelectorAll(':scope > .en-text, :scope > .zh-text');
+            if (langSpans.length > 0) {
+                langSpans.forEach(splitCharsToSpans);
+            } else {
+                splitCharsToSpans(textEl);
+            }
         });
 
         let activeIndex = 0;
@@ -748,6 +826,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initInteractiveCards();
     initPhotoLightbox();
     initScrollAnimations();
+    initSectionFadeIn();
+    initLanguageToggle();
     animateSkillBars();
     initNavbarScroll();
     initNavbarCollapse();
