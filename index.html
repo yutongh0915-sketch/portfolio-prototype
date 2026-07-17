@@ -36,10 +36,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-inner">
-            <a href="#hero" class="nav-brand">
-                <span class="nav-logo">HYT</span>
-                <span class="nav-text">PORTFOLIO</span>
-            </a>
+            <div class="nav-brand-group">
+                <a href="#hero" class="nav-brand">
+                    <span class="nav-logo">HYT</span>
+                    <span class="nav-text">PORTFOLIO</span>
+                </a>
+                <button class="lang-toggle" type="button" aria-label="Switch language / 切换语言">
+                    <span class="lang-label-en">EN</span>
+                    <span class="lang-sep">/</span>
+                    <span class="lang-label-zh">中</span>
+                </button>
+            </div>
             <div class="nav-links">
                 <a href="#about" class="nav-link"><span class="en-text">About</span><span class="zh-text">关于我</span></a>
                 <a href="#skills" class="nav-link"><span class="en-text">Skills</span><span class="zh-text">技能世界</span></a>
@@ -48,11 +55,6 @@
                 <a href="#contact" class="nav-link"><span class="en-text">Contact</span><span class="zh-text">联系我</span></a>
             </div>
             <div class="nav-actions">
-                <button class="lang-toggle" type="button" aria-label="Switch language / 切换语言">
-                    <span class="lang-label-en">EN</span>
-                    <span class="lang-sep">/</span>
-                    <span class="lang-label-zh">中</span>
-                </button>
                 <button class="nav-collapse-btn" aria-label="收起导航栏" title="收起导航栏" data-aria-en="Collapse navbar" data-aria-zh="收起导航栏" data-title-en="Collapse navbar" data-title-zh="收起导航栏">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="18 15 12 9 6 15"/>
@@ -621,7 +623,7 @@
                 <div class="project-header-left">
                     <span class="project-number">03</span>
                     <div class="project-title-group">
-                        <h3 class="project-title"><span class="en-text">Zhejiang Entrepreneurship &amp; Organizational Resilience</span><span class="zh-text">浙商精神与组织韧性</span></h3>
+                        <h3 class="project-title"><span class="en-text">Zhejiang Entrepreneurship &amp; Organizational Resilience</span><span class="zh-text">项目三：浙商精神抽样调查研究</span></h3>
                         <p class="project-metadata"><span class="en-text">ZJSU College Students Innovation &amp; Entrepreneurship Training Program | 04/2025 - Present</span><span class="zh-text">浙江工商大学大学生创新创业训练计划 | 2025年4月 - 至今</span></p>
                     </div>
                 </div>
@@ -629,7 +631,7 @@
             </div>
             <div class="project-expanded">
                 <div class="project-subtitle-bar">
-                    <p><span class="en-text">Employing a mixed-methods research approach to deeply explore the impact of regional business culture on corporate green transition and organizational resilience.</span><span class="zh-text">采用混合研究方法，深入探讨地域商业文化对企业绿色转型与组织韧性的影响。</span></p>
+                    <p><span class="en-text">Employed a mixed-methods approach, utilizing survey data from 264 startups and in-depth qualitative interviews, to deeply explore how the "Zhejiang Spirit" empowers organizational resilience in enterprises.</span><span class="zh-text">采用问卷调查与深度访谈的混合研究方法，基于264家企业的实证数据，深入探讨"浙商精神"这一地域商业文化如何赋能初创企业的组织韧性。</span></p>
                 </div>
                 <div class="scroll-dots">
                     <button class="scroll-dot active" data-slide="0" aria-label="Overview" data-aria-en="Overview" data-aria-zh="概述"></button>
@@ -642,11 +644,11 @@
                             <h4 class="slide-title"><span class="en-text">Overview &amp; Background</span><span class="zh-text">概述与背景</span></h4>
                             <div class="slide-section">
                                 <h5 class="section-label"><span class="en-text">Context</span><span class="zh-text">背景</span></h5>
-                                <p><span class="en-text">Against the backdrop of the "Dual Carbon" goals, traditional manufacturing enterprises face severe challenges during their green transition.</span><span class="zh-text">在"双碳"目标背景下，传统制造企业在绿色转型过程中面临严峻挑战。</span></p>
+                                <p><span class="en-text">Amidst a complex macroeconomic environment, existing research primarily focuses on formal institutional support, rarely addressing the profound impact of informal cultural systems—such as regional business spirit—on a company's ability to withstand risks.</span><span class="zh-text">当前复杂严峻的宏观经济环境下，现有研究多聚焦于正式制度支持，鲜少关注地域文化（如浙商精神）这一非正式制度对企业抗风险能力的深层影响。</span></p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label"><span class="en-text">Objective</span><span class="zh-text">目标</span></h5>
-                                <p><span class="en-text">To investigate how the "Zhejiang Entrepreneurship Spirit" drives corporate value creation and enhances organizational resilience using empirical data and case studies.</span><span class="zh-text">利用实证数据和案例研究，探究"浙商精神"如何驱动企业的价值创造并提升组织韧性。</span></p>
+                                <p><span class="en-text">To decode the core essence of the Zhejiang Spirit, unveil its internal mechanisms for enhancing entrepreneurial resilience through Structural Equation Modeling, and distill a replicable "Zhejiang Experience" to guide entrepreneurial practices nationwide.</span><span class="zh-text">剖析"浙商精神"的核心内涵，通过构建结构方程模型揭示其提升创业韧性的内在作用机理，并提炼浙江经验，为全国创新创业提供理论支撑与实践指导。</span></p>
                             </div>
                             <div class="slide-section">
                                 <h5 class="section-label"><span class="en-text">Role</span><span class="zh-text">角色</span></h5>
@@ -718,11 +720,11 @@
                             <ul class="contribution-list">
                                 <li class="contribution-item">
                                     <strong class="contribution-title"><span class="en-text">0-to-1 Product Design</span><span class="zh-text">产品设计</span></strong>
-                                    <p class="contribution-desc"><span class="en-text">Spearheaded the end-to-end requirement design for the core "Data Correction" module. Created high-fidelity Figma prototypes and comprehensive PRDs, streamlining the workflow by removing 30% of redundant features while introducing critical new capabilities like batch selection and draft saving.</span><span class="zh-text">独立展开"数据纠错"模块的需求设计。通过Figma设计原型并撰写了详尽的 PRD 文档。通过剔除 30% 的冗余功能并引入批量选择、草稿保存等关键新功能，优化了工作流。</span></p>
+                                    <p class="contribution-desc"><span class="en-text">Spearheaded the "Data Correction" module to address critical pain points, including data inconsistency from multi-source flows and inefficient manual correction processes. Defined clear data flow paths, created high-fidelity Figma prototypes, and drove cross-functional collaboration spanning R&amp;D, QA, and UAT through to successful deployment.</span><span class="zh-text">针对底层数据多源流转导致的数据不一致、人工纠错效率低下的痛点，设计"数据纠错"需求。首先明确数据流转路径，再利用Figma进行原型设计，并跨部门跟进研发、测试、验收至上线交付。</span></p>
                                 </li>
                                 <li class="contribution-item">
                                     <strong class="contribution-title"><span class="en-text">User-Centric Research</span><span class="zh-text">以用户为中心的调研</span></strong>
-                                    <p class="contribution-desc"><span class="en-text">Conducted on-site field visits and 1-on-1 interviews with front-line users to identify usability blockers. Synthesized findings into 8 core business pain points, providing data-driven evidence that guided the optimization of multi-level approvals and batch operations.</span><span class="zh-text">开展了实地走访，调研系统的使用体验；并收集对移动端场景的使用需求。提炼8大核心痛点，与UI对接PC 端交互改版设计。并形成移动端需求方案纳入产品迭代排期，跟进项目迭代升级。</span></p>
+                                    <p class="contribution-desc"><span class="en-text">Conducted field visits to evaluate system user experience and gather requirements for mobile scenarios. Synthesized findings into 8 core pain points and collaborated closely with the UI team on the PC interface redesign. Formulated comprehensive mobile requirement proposals, integrated them into the product iteration roadmap, and tracked ongoing project upgrades.</span><span class="zh-text">开展了实地走访，调研系统的使用体验；并收集对移动端场景的使用需求。提炼8大核心痛点，与UI对接PC端交互改版设计。并形成移动端需求方案纳入产品迭代排期，跟进项目迭代升级。</span></p>
                                 </li>
                                 <li class="contribution-item">
                                     <strong class="contribution-title"><span class="en-text">Workflow Standardization</span><span class="zh-text">工作流标准化</span></strong>
